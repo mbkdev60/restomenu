@@ -1,24 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Menu from "./composants/menu";
 
 function App() {
+  // définir les fonctions callback
+  const handleRegimeClick = (index: number) => {
+    console.log(index);
+  };
+
+  const handleFormuleClick = (index: number) => {
+    console.log(index);
+  };
+
+  const handleFactureClick = (index: number) => {
+    console.log(index);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header></header>
+      <nav>
+        <Menu
+          data={["Vegan", "Viendard sensible", "Véquoi?"]}
+          onClick={handleRegimeClick} // injection de la callback dans le menu
+        />
+        <Menu
+          data={["Petite faim", "Grosse dalle"]}
+          onClick={handleFormuleClick}
+        />
+      </nav>
+      <section></section>
+      <footer>
+        <Menu
+          data={["Abonnés", "Pompiers et militaires", "Autres"]}
+          onClick={handleFactureClick}
+        />
+        <Menu data={["Commander"]} />
+      </footer>
     </div>
   );
 }
