@@ -1,27 +1,28 @@
-import React, { useState } from "react";
+ import React, { useState } from "react";
 // noter: ? pour déclarer une propriété facultative
 interface IProps {
   data: string[];
   onClick?: (index: number) => {} | void;
-  selected?: number;
+  selected?: any;
+  className?: string;
 }
-function Menu(props: IProps) {
+const Menu = (props: IProps) => {
   const [curIndex, setCurIndex] = useState(props.selected);
-  const handelToogle = (index: number) => {
+  const handleToogle = (index: number) => {
     setCurIndex(index);
   };
   const liElm = props.data.map((label, index) => (
     <li
       className={curIndex === index ? "activated" : undefined}
       onClick={() => {
-        handelToogle(index);
+        handleToogle(index);
         if (props.onClick) props.onClick(index);
       }}
     >
       {label}
     </li>
   ));
-  return <ul>{liElm}</ul>;
+  return <ul className={props.className}>{liElm}</ul>;
 }
 
 export default Menu;
