@@ -8,7 +8,7 @@ const panier = (props: IProps) => {
   const facturation = ["7 €", "3 €", "Abonnez-vous!!!"];
   return (
     <div className={props.className}>
-      <h2>Panier</h2>
+      <h2>Prix "à la tête du client"</h2>
       <p>{facturation[props.facturation]}</p>
     </div>
   );

@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Menu from "./composants/menu";
 import Panier from "./composants/panier";
+import api,{IDataRow} from "./services/api";
 
 function App() {
   const [bgClass, setBgClass] = useState("bg-pas-vegan");
   const [regime, setRegime] = useState("2");
   const [formule, setFormule] = useState("1");
   const [facturation, setFacturation] = useState("0");
+  const [entreesDuJour, setEntreesDuJour] = useState([]as IDataRow[]);
+  const [isMounted, setIsMounted] = useState(false);
   // définir les fonctions callback
   const handleRegimeClick = (index: any) => {
     const bg = ["bg-vegan", "bg-viandard-sensible", "bg-pas-vegan"]
@@ -22,9 +25,18 @@ function App() {
   const handleFactureClick = (index: any) => {
     setFacturation(index);
   };
+
+  useEffect(() => {
+    !isMounted && api.getEntreeDuJour().then(json => {
+      setIsMounted(true);
+      setEntreesDuJour(json);
+    })
+  }, [isMounted]);
   return (
     <div className="App">
-      <header className={bgClass}></header>
+      <header className={bgClass}>
+        <h1>Menu du {new Date().toLocaleDateString("fr-FR",{weekday:"long"})}</h1>
+      </header>
       <nav>
         <Menu
           className={`regime ${bgClass}`}

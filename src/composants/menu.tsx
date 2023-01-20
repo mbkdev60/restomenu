@@ -2,7 +2,7 @@ import React, { useState } from "react";
 // noter: ? pour déclarer une propriété facultative
 interface IProps {
   data: string[];
-  onClick?: (index: number) => {} | void; // la callback retourne soitu un objet ou rien   
+  onClick?: (index: number) => {} | void; // la callback retourne soit un objet ou rien   
   selected?: any;
   className?: string;
 }
