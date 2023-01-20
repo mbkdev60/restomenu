@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import Menu from "./composants/menu";
+import Panier from "./composants/panier";
 
 function App() {
   const [bgClass, setBgClass] = useState("bg-pas-vegan");
@@ -46,6 +47,7 @@ function App() {
           onClick={handleFactureClick}
           selected={facturation}
         />
+        <Panier className={`facturation ${bgClass}`} facturation={facturation} />
         <Menu className={`validation ${bgClass}`} data={["Commander"]} />
       </footer>
     </div>

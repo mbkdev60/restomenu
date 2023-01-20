@@ -1,8 +1,8 @@
- import React, { useState } from "react";
+import React, { useState } from "react";
 // noter: ? pour déclarer une propriété facultative
 interface IProps {
   data: string[];
-  onClick?: (index: number) => {} | void;
+  onClick?: (index: number) => {} | void; // la callback retourne soitu un objet ou rien   
   selected?: any;
   className?: string;
 }
@@ -23,6 +23,6 @@ const Menu = (props: IProps) => {
     </li>
   ));
   return <ul className={props.className}>{liElm}</ul>;
-}
+};
 
 export default Menu;
