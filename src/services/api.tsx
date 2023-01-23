@@ -6,13 +6,13 @@ export interface IDataRow {
 }
 
 const api = () => {
-  const getEntreeDuJour = ():Promise<IDataRow[]> => {
+  const getEntreesDuJour = ():Promise<IDataRow[]> => {
     return fetch("http://localhost:8000/api/entreesdujour", {
       method: "GET",
     }).then((res) => res.json());
   };
   return {
-    getEntreeDuJour,
+    getEntreesDuJour,
   };
 };
 

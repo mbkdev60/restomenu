@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
+import "./styles/App.css";
 import Menu from "./composants/menu";
 import Panier from "./composants/panier";
 import api,{IDataRow} from "./services/api";
@@ -27,7 +27,7 @@ function App() {
   };
 
   useEffect(() => {
-    !isMounted && api.getEntreeDuJour().then(json => {
+    !isMounted && api.getEntreesDuJour().then(json => {
       setIsMounted(true);
       setEntreesDuJour(json);
     })

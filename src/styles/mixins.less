@@ -1,3 +1,42 @@
-@smartphone: (max-width: 30em);
-@tablette: (min-width: 30em) and (max-width: 50em);
-@laptop: (min-width: 50em);
+@import "variables";
+
+.getBackground(@url) {
+    @media @smartphone {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(50, 20, 20, 1)), url(@url);
+    }
+
+    @media @tablette,
+    @laptop {
+        background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(50, 200, 200, 0.8)), url(@url);
+    }
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.bg {
+    &-vegan {
+        .getBackground("https://s3.inpulse.tv/soja.jpg");
+    }
+
+    &-pas-vegan {
+        .getBackground("https://s3.inpulse.tv/poulet.jpg");
+    }
+
+    &-viandard-sensible {
+        .getBackground("https://s3.inpulse.tv/blanc_de_poulet_roti.jpg");
+    }
+}
+
+.generate-h(@n, @i: 1) when (@i =< @n) {
+    h@{i} {
+        font-family: 'Dosis', sans-serif;
+        font-weight: (800 / pow(2, @i - 1));
+        font-size: (3em - ((@i - 1) * 0.5));
+    }
+
+    .generate-h(@n, (@i + 1));
+}
+

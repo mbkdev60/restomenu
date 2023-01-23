@@ -1,0 +1,49 @@
+.bg-vegan {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+@media (max-width = 30em) {
+  .bg-vegan {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), #321414), url("https://s3.inpulse.tv/soja.jpg");
+  }
+}
+@media (min-width = 30em) and (max-width = 50em), (min-width = 50em) {
+  .bg-vegan {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(50, 200, 200, 0.8)), url("https://s3.inpulse.tv/soja.jpg");
+  }
+}
+.bg-pas-vegan {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+@media (max-width = 30em) {
+  .bg-pas-vegan {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), #321414), url("https://s3.inpulse.tv/poulet.jpg");
+  }
+}
+@media (min-width = 30em) and (max-width = 50em), (min-width = 50em) {
+  .bg-pas-vegan {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(50, 200, 200, 0.8)), url("https://s3.inpulse.tv/poulet.jpg");
+  }
+}
+.bg-viandard-sensible {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+@media (max-width = 30em) {
+  .bg-viandard-sensible {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), #321414), url("https://s3.inpulse.tv/blanc_de_poulet_roti.jpg");
+  }
+}
+@media (min-width = 30em) and (max-width = 50em), (min-width = 50em) {
+  .bg-viandard-sensible {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(50, 200, 200, 0.8)), url("https://s3.inpulse.tv/blanc_de_poulet_roti.jpg");
+  }
+}
+/*# sourceMappingURL=mixins.css.map */

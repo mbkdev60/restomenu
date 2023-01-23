@@ -1,0 +1,255 @@
+@font-face {
+  font-family: 'Dosis';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/dosis/v27/HhyJU5sn9vOmLxNkIwRSjTVNWLEJN7MV3A.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr6Ew-.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Ew-.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr70w-.ttf) format('truetype');
+}
+.bg-vegan {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+@media (max-width = 30em) {
+  .bg-vegan {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), #321414), url("https://s3.inpulse.tv/soja.jpg");
+  }
+}
+@media (min-width = 30em) and (max-width = 50em), (min-width = 50em) {
+  .bg-vegan {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(50, 200, 200, 0.8)), url("https://s3.inpulse.tv/soja.jpg");
+  }
+}
+.bg-pas-vegan {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+@media (max-width = 30em) {
+  .bg-pas-vegan {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), #321414), url("https://s3.inpulse.tv/poulet.jpg");
+  }
+}
+@media (min-width = 30em) and (max-width = 50em), (min-width = 50em) {
+  .bg-pas-vegan {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(50, 200, 200, 0.8)), url("https://s3.inpulse.tv/poulet.jpg");
+  }
+}
+.bg-viandard-sensible {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+@media (max-width = 30em) {
+  .bg-viandard-sensible {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), #321414), url("https://s3.inpulse.tv/blanc_de_poulet_roti.jpg");
+  }
+}
+@media (min-width = 30em) and (max-width = 50em), (min-width = 50em) {
+  .bg-viandard-sensible {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(50, 200, 200, 0.8)), url("https://s3.inpulse.tv/blanc_de_poulet_roti.jpg");
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+  color: #141402;
+}
+@media (max-width = 30em) {
+  body {
+    color: white;
+  }
+}
+@media (min-width = 30em) and (max-width = 50em) {
+  body {
+    background-color: FloralWhite;
+  }
+}
+@media (min-width = 50em) {
+  body {
+    background: linear-gradient(rgba(255, 255, 255, 0.3), #32ffff);
+  }
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  max-width: 900px;
+  height: 100vh;
+  margin: 0 auto;
+}
+.App > * {
+  margin-bottom: 0.5em;
+}
+header {
+  flex-shrink: 0;
+  padding: 2em 1em;
+}
+nav > *:not(:last-child),
+footer > *:not(:last-child) {
+  margin-bottom: 0.5em;
+}
+h1 {
+  font-family: 'Dosis', sans-serif;
+  font-weight: 800;
+  font-size: 3em;
+}
+h2 {
+  font-family: 'Dosis', sans-serif;
+  font-weight: 400;
+  font-size: 2.5em;
+}
+h3 {
+  font-family: 'Dosis', sans-serif;
+  font-weight: 200;
+  font-size: 2em;
+}
+@media (max-width = 30em) {
+  h1 {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
+@media (max-width = 30em) {
+  h2 {
+    text-align: center;
+    letter-spacing: 0.5rem;
+  }
+  h2:active {
+    color: red;
+  }
+}
+@media (max-width = 30em) {
+  h3 {
+    text-align: center;
+  }
+}
+section {
+  overflow: auto;
+  min-height: 3em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+section::-webkit-scrollbar {
+  display: none;
+}
+section .entree h2,
+section .plat h2,
+section .entree h3,
+section .plat h3,
+section .entree p,
+section .plat p {
+  margin-bottom: 0.5em;
+}
+@media (min-width = 50em) {
+  section .entree p,
+  section .plat p {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 1em;
+    border-radius: 10px;
+    margin-left: 3em;
+    margin-right: 3em;
+  }
+}
+section .entree p span,
+section .plat p span {
+  display: block;
+  text-align: center;
+  font-size: 2.2em;
+  font-weight: 1000;
+  -webkit-text-stroke-color: Gray;
+  -webkit-text-stroke-width: 1px;
+}
+section .entree p span.principal,
+section .plat p span.principal {
+  color: NavajoWhite;
+  padding-top: 1em;
+}
+section .entree p span.garniture a,
+section .plat p span.garniture a {
+  color: HotPink;
+  text-decoration: none;
+}
+section .entree p span.sauce,
+section .plat p span.sauce {
+  color: yellow;
+}
+.regime,
+.formule,
+.facturation,
+.validation {
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  min-height: 3em;
+  padding-left: 1em;
+  padding-right: 1em;
+  cursor: pointer;
+}
+.regime li,
+.formule li,
+.facturation li,
+.validation li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  list-style: none;
+}
+.regime li:hover,
+.formule li:hover,
+.facturation li:hover,
+.validation li:hover,
+.regime li.activated,
+.formule li.activated,
+.facturation li.activated,
+.validation li.activated {
+  background-color: red;
+  color: white;
+}
+.panier {
+  display: flex;
+  flex-direction: row;
+  min-height: 3em;
+}
+.panier > * {
+  flex: 1 1 0;
+  font-size: 2em;
+  margin: auto 0 auto 1em;
+}
+.panier > :nth-child(odd) {
+  text-align: right;
+}
+.panier > :nth:child(even) {
+  text-align: left;
+}
+/*# sourceMappingURL=App.css.map */
