@@ -35,7 +35,9 @@ function App() {
   return (
     <div className="App">
       <header className={bgClass}>
-        <h1>Menu du {new Date().toLocaleDateString("fr-FR",{weekday:"long"})}</h1>
+        <h1>
+          Menu du {new Date().toLocaleDateString("fr-FR", { weekday: "long" })}
+        </h1>
       </header>
       <nav>
         <Menu
@@ -51,7 +53,61 @@ function App() {
           selected={formule}
         />
       </nav>
-      <section className={bgClass}></section>
+      <section className={bgClass}>
+        {formule === "1" && (
+          <article className="entree">
+            <h2>Entrées</h2>
+            {entreesDuJour &&
+              entreesDuJour
+                .filter(
+                  (row: any) =>
+                    (regime === "0" && row.Vegan) || (regime !== "0" && !row.Vegan)
+                )
+                .map((row, index) => {
+                  return (
+                    <div key={index}>
+                      <h3>{row.Nom}</h3>
+                      <p>{row.Description}</p>
+                    </div>
+                  );
+                })}
+          </article>
+        )}
+        <article className="plat">
+          <h2>Plat</h2>
+          <h3>Etouffe-Chrétien</h3>
+          <p>
+            C'est au figuré
+            <br />
+            En vrai on n'a rien contre les chrétiens d'ailleurs j'ai un ami
+            chrétien, et il <b>adore</b> ce{" "}
+            <span className="principal">Sandwich</span>
+            {regime === "0" && (
+              <span className="garniture">
+                <a
+                  href="https://vegan-pratique.fr/cote-cuisine/cuisiner-proteines-de-soja-texturees/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  protéines de soja texturées
+                </a>
+              </span>
+            )}
+            {regime !== "0" && (
+              <span className="garniture">
+                <a
+                  href="https://fr.wikipedia.org/wiki/poulet"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  poulet
+                </a>
+              </span>
+            )}{" "}
+            <span className="sauce">mayonnaise {regime === "0" && "vegan"}</span>
+          </p>
+        </article>
+      </section>
       <footer>
         <Menu
           className={`facturation ${bgClass}`}
@@ -59,7 +115,10 @@ function App() {
           onClick={handleFactureClick}
           selected={facturation}
         />
-        <Panier className={`facturation ${bgClass}`} facturation={facturation} />
+        <Panier
+          className={`facturation ${bgClass}`}
+          facturation={facturation}
+        />
         <Menu className={`validation ${bgClass}`} data={["Commander"]} />
       </footer>
     </div>
